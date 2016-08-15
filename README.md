@@ -1,3 +1,7 @@
+
+
+
+
 # Hero /Login/Signup
 ![hero login signup](http://i.imgur.com/DjnegCR.png)
 * As an interested user, I would like to create an account so i can find users to connect with
