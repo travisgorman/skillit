@@ -14,7 +14,6 @@ export default React.createClass({
     return (
       <div>
       <Header/>
-      {this.props.children}
         Welcome!
       </div>
     )

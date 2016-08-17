@@ -1,5 +1,6 @@
 import React from 'react';
 import store from '../store';
+import Header from './Header';
 
 export default React.createClass({
   getInitialState: function () {
@@ -17,7 +18,9 @@ export default React.createClass({
   render: function () {
     console.log(this.state );
     return (
+
       <div className="myProfile">
+      <Header/>
         <div className="red">
           <h3>user photo</h3>
           <img
@@ -33,16 +36,12 @@ export default React.createClass({
           </ul>
         </div>
         <div className="yellow">
-          <h3>skills</h3>
-          <ul>
-            <li>Cooking</li>
-            <li>Sloth Wrangling</li>
-            <li>JavaScript</li>
-          </ul>
+          <h3>Skills</h3>
+          {this.state.skills}
         </div>
         <div className="blue">
           <h3>description</h3>
-          I'm an amateur sloth wrangler who's learning JavaScript
+          {this.state.description}
         </div>
       </div>
     )

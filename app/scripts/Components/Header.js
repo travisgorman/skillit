@@ -5,7 +5,8 @@ export default React.createClass({
   render: function () {
     return (
       <header>
-        <Link to='/myProfile'> My Profile </Link>
+        <Link to='/MyProfile'> My Profile </Link>
+        <Link to='/EditMyProfile'> Edit My Profile </Link>
       </header>
     )
   }

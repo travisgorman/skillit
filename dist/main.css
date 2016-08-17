@@ -1,3 +1,6 @@
+* {
+  list-style-type: none; }
+
 .myProfile {
   display: flex;
   flex-direction: row; }
