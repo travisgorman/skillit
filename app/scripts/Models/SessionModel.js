@@ -14,11 +14,10 @@ export default Backbone.Model.extend({
    if ( response ) {
      return {
       username: response.username,
-      response: response._Id,
       authtoken: response._kmd.authtoken,
       userphoto: response.userphoto,
       location: response.location,
-      link: response.links,
+      link: response.link,
       skills: response.skills,
       description: response.description
      };

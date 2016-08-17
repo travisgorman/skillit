@@ -8,7 +8,7 @@ import store from '../store';
 export default React.createClass({
   componentDidMount: function () {
     console.log( 'store.session...', store.sessionModel.attributes );
-    console.log( 'user...', user )
+    console.log( 'user...', store.userModel )
 
   },
   render: function() {
