@@ -4,16 +4,16 @@
 .myProfile {
   display: flex;
   flex-direction: row; }
-  .myProfile .red {
+  .myProfile .photo {
     width: 50%;
     height: 50%; }
-  .myProfile .green {
+  .myProfile .info {
     width: 50%;
     height: 50%; }
-  .myProfile .yellow {
+  .myProfile .skills {
     width: 50%;
     height: 50%; }
-  .myProfile .blue {
+  .myProfile .description {
     width: 50%;
     height: 50%; }
 

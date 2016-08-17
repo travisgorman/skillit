@@ -16,34 +16,37 @@ export default React.createClass({
     this.setState(store.sessionModel.toJSON());
   },
   render: function () {
-    console.log(this.state );
+    console.log( this.state );
     return (
+            <div>
+              <Header/>
+              <div className="myProfile">
 
-      <div className="myProfile">
-      <Header/>
-        <div className="red">
-          <h3>user photo</h3>
-          <img
-            src="http://i.imgur.com/c6PPaWT.png"
-            alt="user profile photo"/>
-        </div>
-        <div className="green">
-          <h3>user info</h3>
-          <ul>
-            <li>{this.state.username}</li>
-            <li>{this.state.location}</li>
-            <li>{this.state.link}</li>
-          </ul>
-        </div>
-        <div className="yellow">
-          <h3>Skills</h3>
-          {this.state.skills}
-        </div>
-        <div className="blue">
-          <h3>description</h3>
-          {this.state.description}
-        </div>
-      </div>
+                <div className="photo">
+                  <h3>user photo</h3>
+                  <img
+                    src="http://i.imgur.com/c6PPaWT.png"
+                    alt="user profile photo"/>
+                </div>
+
+                <div className="info">
+                  <h3>User Info</h3>
+                  <ul>
+                    <li>{this.state.username}</li>
+                    <li>{this.state.location}</li>
+                    <li>{this.state.link}</li>
+                  </ul>
+                </div>
+                <div className="Skills">
+                  <h3>Skills</h3>
+                  {this.state.skills}
+                </div>
+                <div className="description">
+                  <h3>description</h3>
+                  {this.state.description}
+                </div>
+              </div>
+            </div>
     )
   }
 

@@ -2,9 +2,10 @@
 import Backbone from 'backbone';
 import $ from 'jquery';
 import store from '../store';
+import settings from '../settings';
 
 export default Backbone.Model.extend({
-  urlRoot:'/user',
+  urlRoot:`https://baas.kinvey.com/user/${settings.appKey}`,
   idAttribute: '_id',
   defaults: {
     userphoto: 'http://i.imgur.com/c6PPaWT.png',
@@ -13,6 +14,7 @@ export default Backbone.Model.extend({
   parse: function( response ) {
    if ( response ) {
      return {
+      _id: response._id,
       username: response.username,
       authtoken: response._kmd.authtoken,
       userphoto: response.userphoto,
@@ -27,7 +29,7 @@ export default Backbone.Model.extend({
   login: function(data){
     $.ajax({
       type: 'POST',
-      url: `https://baas.kinvey.com/user/${store.settings.appKey}/login`,
+      url: `https://baas.kinvey.com/user/${settings.appKey}/login`,
       data: JSON.stringify(data),
       contentType: 'application/json',
       success: (s) => {
@@ -43,7 +45,7 @@ export default Backbone.Model.extend({
     console.log(data);
     $.ajax({
       type: 'POST',
-      url: `https://baas.kinvey.com/user/${store.settings.appKey}`,
+      url: `https://baas.kinvey.com/user/${settings.appKey}`,
       data: JSON.stringify(data),
       contentType: 'application/json',
       success: (s) =>{
