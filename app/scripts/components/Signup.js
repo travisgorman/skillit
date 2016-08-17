@@ -7,13 +7,13 @@ export default React.createClass({
     return {};
   },
   updateState: function () {
-    this.setState(store.session.toJSON());
+    this.setState(store.sessionModel.toJSON());
   },
   componentDidMount: function () {
-    store.session.on('change', this.updateState);
+    store.sessionModel.on( 'change', this.updateState);
   },
   componentWillUnmount: function () {
-    store.session.off('change', this.updateState);
+    store.sessionModel.off( 'change', this.updateState);
   },
   submitHandler: function( e ) {
     e.preventDefault();
@@ -23,8 +23,9 @@ export default React.createClass({
         return a;
       }, {});
       data.userphoto = 'http://i.imgur.com/c6PPaWT.png';
-      store.session.signup( data );
-      console.log(store.session);
+      store.sessionModel.signup( data );
+
+      console.log( store.sessionModel );
   },
   shouldComponentUpdate: function ( nextProps, nextState ) {
     if ( nextState.authtoken ){

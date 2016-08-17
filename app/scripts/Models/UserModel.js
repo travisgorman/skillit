@@ -1,6 +1,6 @@
 import Backbone from 'backbone';
 
-const UserModel = Backbone.Model.extend({
+export default Backbone.Model.extend({
   idAttribute: '_id',
   defaults: {
     username: '',
@@ -11,5 +11,3 @@ const UserModel = Backbone.Model.extend({
     description: ''
   }
 });
-
-export default UserModel;

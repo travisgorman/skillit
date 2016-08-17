@@ -1,7 +1,8 @@
-// import Backbone from 'backbone';
-// import user from '../models/user';
-//
-// export default Backbone.Collection.extend({
-//   url: `https://baas.kinvey.com/user/${settings.appKey}`,
-//   model: user;
-// });
+import Backbone from 'backbone';
+import UserModel from '../Models/UserModel';
+
+
+export default Backbone.Collection.extend({
+  model: UserModel,
+  url: 'https://baas.kinvey.com/user/kid_H1NgpLJ9'
+});

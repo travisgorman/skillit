@@ -8,13 +8,13 @@ export default React.createClass({
     return {};
   },
   updateState: function(){
-    this.setState(store.session.toJSON());
+    this.setState(store.sessionModel.toJSON());
   },
   componentDidMount: function(){
-    store.session.on('change', this.updateState);
+    store.sessionModel.on('change', this.updateState);
   },
   componentWillUnmount: function () {
-    store.session.off('change', this.updateState);
+    store.sessionModel.off('change', this.updateState);
   },
   submitHandler: function (e) {
     e.preventDefault();
@@ -22,7 +22,7 @@ export default React.createClass({
       returnSoFar[curr] = this.refs[curr].value;
       return returnSoFar;
     }, {})
-    store.session.login(data);
+    store.sessionModel.login(data);
       // .then(function(response){
       //   console.log(response);
       // });
@@ -49,7 +49,7 @@ export default React.createClass({
       <input
         type="submit"
         value="submit" />
-      <Link to="/signup"><span>create an account</span></Link>
+      <Link to="/signup"><span> create an account </span></Link>
       </form>
     )
   }

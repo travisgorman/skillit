@@ -1,8 +1,7 @@
 
 import Backbone from 'backbone';
-// import settings from '../settings';
-import settings from '../store.settings';
 import $ from 'jquery';
+import store from '../store';
 
 export default Backbone.Model.extend({
   urlRoot:'/user',
@@ -19,7 +18,7 @@ export default Backbone.Model.extend({
       authtoken: response._kmd.authtoken,
       userphoto: response.userphoto,
       location: response.location,
-      links: response.links,
+      link: response.links,
       skills: response.skills,
       description: response.description
      };
@@ -29,7 +28,7 @@ export default Backbone.Model.extend({
   login: function(data){
     $.ajax({
       type: 'POST',
-      url: `https://baas.kinvey.com/${settings.appKey}/login`,
+      url: `https://baas.kinvey.com/user/${store.settings.appKey}/login`,
       data: JSON.stringify(data),
       contentType: 'application/json',
       success: (s) => {
@@ -45,7 +44,7 @@ export default Backbone.Model.extend({
     console.log(data);
     $.ajax({
       type: 'POST',
-      url: `https://baas.kinvey.com/user/${settings.appKey}`,
+      url: `https://baas.kinvey.com/user/${store.settings.appKey}`,
       data: JSON.stringify(data),
       contentType: 'application/json',
       success: (s) =>{
