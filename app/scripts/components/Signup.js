@@ -15,17 +15,20 @@ export default React.createClass({
   componentWillUnmount: function () {
     store.session.off('change', this.updateState);
   },
-  submitHandler: function(e) {
+  submitHandler: function( e ) {
     e.preventDefault();
-    var data = Object.keys(this.refs)
-      .reduce( (a, b) => { a[b] = this.refs[b].value;
+    var data = Object.keys( this.refs )
+      .reduce( (a, b) => {
+        a[ b ] = this.refs[ b ].value;
         return a;
-      }, {})
-      store.session.signup(data);
+      }, {});
+      data.userphoto = 'http://i.imgur.com/c6PPaWT.png';
+      store.session.signup( data );
+      console.log(store.session);
   },
-  shouldComponentUpdate: function (nextProps, nextState) {
-    if (nextState.authtoken){
-      hashHistory.push('/welcome');
+  shouldComponentUpdate: function ( nextProps, nextState ) {
+    if ( nextState.authtoken ){
+      hashHistory.push( '/welcome' );
       return false;
     } else {
       return true;
@@ -33,7 +36,7 @@ export default React.createClass({
   },
   render: function () {
     return (
-      <form onSubmit={this.submitHandler}>
+      <form onSubmit={ this.submitHandler }>
         <input
           ref="username"
           type="text"
@@ -46,6 +49,22 @@ export default React.createClass({
           ref="verifyPassword"
           type="password"
           placeholder="verify password" />
+        <input
+          ref="location"
+          type="text"
+          placeholder="location" />
+        <input
+          ref="link"
+          type="text"
+          placeholder="social media link" />
+        <input
+          ref="skills"
+          type="text"
+          placeholder="skills" />
+        <input
+          ref="description"
+          type="textarea"
+          placeholder="description/bio" />
         <input
           type="submit"
           value="submit" />

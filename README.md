@@ -60,7 +60,7 @@
 
 ___
 Elevator pitch:
-the post-apocalyptic/ burning man/uber of knowledge/skill sharing.
+A social app for connecting with others to trade knowledge and share skills.
 
 That could probably use some work.
 

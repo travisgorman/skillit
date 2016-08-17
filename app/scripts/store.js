@@ -1,4 +1,4 @@
-import Session from './models/session';
+import Session from './models/user';
 
 export default {
   session: new Session()
