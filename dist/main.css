@@ -1,3 +1,17 @@
-
+.myProfile {
+  display: flex;
+  flex-direction: row; }
+  .myProfile .red {
+    width: 50%;
+    height: 50%; }
+  .myProfile .green {
+    width: 50%;
+    height: 50%; }
+  .myProfile .yellow {
+    width: 50%;
+    height: 50%; }
+  .myProfile .blue {
+    width: 50%;
+    height: 50%; }
 
 /*# sourceMappingURL=main.css.map */

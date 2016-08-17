@@ -1,0 +1,20 @@
+.myProfile{
+  display: flex;
+  flex-direction: row;
+  .red {
+    width: 50%;
+    height: 50%;
+  }
+  .green {
+    width: 50%;
+    height: 50%;
+  }
+  .yellow {
+    width: 50%;
+    height: 50%;
+  }
+  .blue {
+    width: 50%;
+    height: 50%;
+  }
+}
