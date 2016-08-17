@@ -1,6 +1,7 @@
 
 import Backbone from 'backbone';
-import settings from '../settings';
+// import settings from '../settings';
+import settings from '../store.settings';
 import $ from 'jquery';
 
 export default Backbone.Model.extend({
