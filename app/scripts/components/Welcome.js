@@ -14,69 +14,66 @@ export default React.createClass({
     // console logs to see what's what...
     e.preventDefault();
 
-    console.log( 'users...',  users);
+    // console.log( 'all users...',  users );
+    let searchLocation = this.refs.location.value;
+    let searchSkill = this.refs.skill.value;
 
-    let javascriptSkills  = users.filter( (user) => {
-      return _.contains( user.skills, 'javascript'  )
-    });
-
-    let fluteSkills  = users.filter( (user) => {
-      return _.contains( user.skills, 'flute'  )
-    });
-
-    let spanishSkills  = users.filter( (user) => {
-      return _.contains( user.skills, 'spanish'  )
-    });
-
-
-console.log( javascriptSkills );
-console.log( fluteSkills );
-console.log( spanishSkills );
-
-let searchSkill = users.filter( (user) => {
-  return _.contains( user.skills, this.refs.skill.value  )
+let searchBySkill = users.filter( (user) => {
+  return _.contains( user.skills, searchSkill  )
 });
-console.log(searchSkill);
+// returns all users matching skill
+// console.log( 'the users able to help you with '+ this.refs.skill.value + ' are ', searchBySkill );
 
-let searchValueSkill = users.filter( (user) => {
-  return _.contains( user.skills, this.refs.skill.value  )
+let searchSkillAndLocation = users.filter( (user) => {
+  return user.location === searchLocation && _.contains( user.skills, searchSkill )
 });
-console.log(searchValueSkill);
+// returns all users matching skill and location
+console.log( searchSkillAndLocation );
+
+let matchingUsers = searchSkillAndLocation
+  .map( user => {
+    return user.username
+  });
+
+console.log(
+matchingUsers
+);
 
 
-
-    // console.log( musicSkills );
-    // console.log('event...', e );
-    // console.log( 'state...', this.state );
-    // console.log( 'usernames', usernames);
-  // ok go
   // get values from `location` and `skill` inputs
-//     let searchLocation = this.refs.location.value;
-//     let searchSkill = this.refs.skill.value;
+
 // // the purpose of this ajax request is to
 // // get all the data from the userCollection (an array of User objects)
 // // define it as an array called `results`
 // // and assign that value  to the `results` property of its state object
 // ...$.ajax({  });
 },
+
 render: function () {
+
+  // let searchLocation = this.refs.location.value;
+  // let searchSkill = this.refs.skill.value;
+  //
+  // let searchSkillAndLocation = users.filter( (user) => {
+  //   return user.location === searchLocation && _.contains( user.skills, searchSkill )
+  // });
 
 // define `mySearchResults` - as the array of UserItems
 
-  let mySearchResults = this.state.results
-    .map( (result, i) => {
-      return (
-        <UserItem
-          key={i}
-          userphoto={ this.state.results.userphoto }
-          username={ this.state.results.username }
-          location={ this.state.results.location }
-          link={ this.state.results.link }
-          skills={ this.state.results.skills }
-          description={ this.state.results.description }
-        />
-      )
-    });
+  // let mySearchResults = searchSkillAndLocation
+  //   .map( (result, i) => {
+  //     return (
+  //       <UserItem
+  //         key={i}
+  //         userphoto={ this.state.results.userphoto }
+  //         username={ this.state.results.username }
+  //         location={ this.state.results.location }
+  //         link={ this.state.results.link }
+  //         skills={ this.state.results.skills }
+  //         description={ this.state.results.description }
+  //       />
+  //     )
+    // });
 
 
   // return search <form> and <main>
@@ -105,7 +102,7 @@ render: function () {
                 />
               </form>
               <main>
-                {mySearchResults}
+                {/* {mySearchResults} */}
               </main>
             </div>
 
