@@ -13,40 +13,29 @@ export default React.createClass({
     // handle search form submit
     // console logs to see what's what...
     e.preventDefault();
-
     // console.log( 'all users...',  users );
     let searchLocation = this.refs.location.value;
     let searchSkill = this.refs.skill.value;
-
-let searchBySkill = users.filter( (user) => {
-  return _.contains( user.skills, searchSkill  )
-});
+    // let searchBySkill = users.filter( (user) => {
+    //   return _.contains( user.skills, searchSkill  )
+    // });
 // returns all users matching skill
-// console.log( 'the users able to help you with '+ this.refs.skill.value + ' are ', searchBySkill );
 
-let searchSkillAndLocation = users.filter( (user) => {
-  return user.location === searchLocation && _.contains( user.skills, searchSkill )
-});
-// returns all users matching skill and location
-console.log( searchSkillAndLocation );
-
-let matchingUsers = searchSkillAndLocation
-  .map( user => {
-    return user.username
+  let searchSkillAndLocation = users.filter( (user) => {
+    return user.location === searchLocation && _.contains( user.skills, searchSkill )
   });
-
-console.log(
-matchingUsers
-);
+  // returns all users matching skill and location
 
 
-  // get values from `location` and `skill` inputs
+  console.log( 'matching users in ', searchLocation ,  searchSkillAndLocation );
+let matchingNames = "";
+  let matchingUsers = searchSkillAndLocation
+    .map( user => {
+      return user.username
+    });
 
-// // the purpose of this ajax request is to
-// // get all the data from the userCollection (an array of User objects)
-// // define it as an array called `results`
-// // and assign that value  to the `results` property of its state object
-// ...$.ajax({  });
+  console.log( matchingUsers );
+
 },
 
 render: function () {
@@ -109,67 +98,3 @@ render: function () {
       )
   }
 });
-
-
-
-// old: welcome component
-// import React from 'react';
-// import Header from './Header';
-// import UserModel from '../Models/UserModel';
-// import UserCollection from '../Collections/UserCollection';
-// import store from '../store';
-//
-// export default React.createClass({
-//
-//   getInitialState: function () {
-//     return {
-//
-//   }
-//
-//   },
-//   componentDidMount: function () {
-//
-//     // search collection
-//
-//   },
-//
-//   submitHandler: function (e) {
-//
-//     e.preventDefault();
-//     console.log(e);
-//     console.log(this.state);
-//
-//   },
-//   render: function() {
-//
-//     return (
-//       <div>
-//       <Header/>
-//         Welcome!
-//       <form
-//         onSubmit={this.submitHandler} >
-//
-//         <input
-//           type="text"
-//           placeholder="location"
-//           ref="searchLocation" />
-//
-//         <input
-//           type="text"
-//           placeholder="skills"
-//           ref="searchSkills" />
-//
-//         <input
-//           type="submit"
-//           value="search" />
-//
-//       </form>
-//       <main
-//         className="searchResults" >
-//
-//
-//       </main>
-//       </div>
-//     )
-//   }
-// });
