@@ -12,7 +12,6 @@ $(document).ajaxSend(function(evt, xhr, jquerySettings){
   } else {
     xhr.setRequestHeader('Authorization', settings.basicAuth)
   }
-console.log(settings);
 });
 
 ReactDOM.render(router, document.getElementById('page'));

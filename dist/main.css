@@ -17,4 +17,20 @@
     width: 50%;
     height: 50%; }
 
+.userItem {
+  display: flex;
+  flex-direction: row; }
+  .userItem .userPhoto {
+    flex: 1;
+    background: red; }
+  .userItem .userInfo {
+    flex: 1;
+    background: green; }
+  .userItem .userSkills {
+    flex: 1;
+    background: yellow; }
+  .userItem .userBio {
+    flex: 1;
+    background: blue; }
+
 /*# sourceMappingURL=main.css.map */

@@ -5,7 +5,7 @@ import store from '../store';
 import settings from '../settings';
 
 export default Backbone.Model.extend({
-  urlRoot:`https://baas.kinvey.com/user/${settings.appKey}`,
+  urlRoot:`https://baas.kinvey.com/user/kid_H1NgpLJ9`,
   idAttribute: '_id',
   defaults: {
     userphoto: 'http://i.imgur.com/c6PPaWT.png',
@@ -29,7 +29,7 @@ export default Backbone.Model.extend({
   login: function(data){
     $.ajax({
       type: 'POST',
-      url: `https://baas.kinvey.com/user/${settings.appKey}/login`,
+      url: `https://baas.kinvey.com/user/kid_H1NgpLJ9/login`,
       data: JSON.stringify(data),
       contentType: 'application/json',
       success: (s) => {
@@ -45,7 +45,7 @@ export default Backbone.Model.extend({
     console.log(data);
     $.ajax({
       type: 'POST',
-      url: `https://baas.kinvey.com/user/${settings.appKey}`,
+      url: `https://baas.kinvey.com/user/kid_H1NgpLJ9`,
       data: JSON.stringify(data),
       contentType: 'application/json',
       success: (s) =>{

@@ -25,7 +25,7 @@ export default React.createClass({
                 <div className="photo">
                   <h3>user photo</h3>
                   <img
-                    src="http://i.imgur.com/c6PPaWT.png"
+                    src={this.state.userphoto}
                     alt="user profile photo"/>
                 </div>
 

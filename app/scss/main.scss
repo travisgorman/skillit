@@ -21,3 +21,24 @@
     height: 50%;
   }
 }
+// UserItem component
+.userItem{
+  display: flex;
+  flex-direction: row;
+  .userPhoto{
+    flex: 1;
+    background: red;
+  }
+  .userInfo{
+    flex: 1;
+    background: green;
+  }
+  .userSkills{
+    flex: 1;
+    background: yellow;
+  }
+  .userBio{
+    flex: 1;
+    background: blue;
+  }
+}
