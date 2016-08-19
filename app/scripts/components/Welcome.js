@@ -14,43 +14,37 @@ export default React.createClass({
     // console logs to see what's what...
     e.preventDefault();
     // console.log( 'all users...',  users );
+
     let searchLocation = this.refs.location.value;
     let searchSkill = this.refs.skill.value;
-    // let searchBySkill = users.filter( (user) => {
-    //   return _.contains( user.skills, searchSkill  )
-    // });
-// returns all users matching skill
+    // input search values
+    let searchSkillAndLocation = users.filter( (user) => {
+      return user.location === searchLocation
+        && _.contains( user.skills, searchSkill )
+    });
+    // returns an array containing all matching users (the whole user object)
+    // TODO: make search more flexible. more complex search capability
+    // TODO: (city only instead of city and state, accepts one field only, ignore case, etc )
 
-  let searchSkillAndLocation = users.filter( (user) => {
-    return user.location === searchLocation && _.contains( user.skills, searchSkill )
-  });
-  // returns all users matching skill and location
-
-
-  console.log( 'matching users in ', searchLocation ,  searchSkillAndLocation );
-let matchingNames = "";
   let matchingUsers = searchSkillAndLocation
     .map( user => {
       return user.username
-    });
-
+  });
+  // returns an array containing the names of all matching users
+let userMatchInfo;
+  if (matchingUsers.length === 1){
+  userMatchInfo = `There is ${matchingUsers.length} user in ${searchLocation} who can help you with ${searchSkill}.`} else { userMatchInfo = `There are ${matchingUsers.length} users in ${searchLocation} who can help you with ${searchSkill}.`
+}
+  console.log( userMatchInfo, searchSkillAndLocation );
+//  how many, of what and where?
   console.log( matchingUsers );
-
+//  logs an array of the names of all returned users
+console.log( store.sessionModel.get( 'username' ));
 },
 
 render: function () {
 
-  // let searchLocation = this.refs.location.value;
-  // let searchSkill = this.refs.skill.value;
-  //
-  // let searchSkillAndLocation = users.filter( (user) => {
-  //   return user.location === searchLocation && _.contains( user.skills, searchSkill )
-  // });
-
-// define `mySearchResults` - as the array of UserItems
-
-  // let mySearchResults = searchSkillAndLocation
-  //   .map( (result, i) => {
+console.log( store.sessionModel.get( 'username' ));
   //     return (
   //       <UserItem
   //         key={i}
@@ -62,15 +56,13 @@ render: function () {
   //         description={ this.state.results.description }
   //       />
   //     )
-    // });
+  // });
 
 
-  // return search <form> and <main>
   return (
-
             <div className="searchResults">
               <Header/>
-                Welcome!
+              <h3>  Welcome {store.sessionModel.get('username')}! </h3>
               <form
                 onSubmit={this.submitHandler}
               >
