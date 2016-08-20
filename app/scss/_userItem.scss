@@ -1,0 +1,98 @@
+// html, body {
+//   font-family: helvetica, arial, san-serif;
+//   * {
+//     box-sizing: border-box;
+//   }
+// }
+//   // Default, Mobile First Styles
+// .UserItem {
+//     margin: 0 1rem;
+//     background: #fff;
+//     box-shadow: 0 0 0.25rem rgba(black, 0.3);
+//     border-radius: 0.25rem;
+//     padding: 1rem;
+//     width: 30rem;
+//     min-width: 18rem;
+//     font-size: 10px;
+//     .userPhoto {
+//       background-color:
+//       background-image: url( 'https://s3.amazonaws.com/uifaces/faces/twitter/beacrea/128.jpg');
+//       background-size: cover;
+//       border-radius: 100%;
+//       width: 10em;
+//       height: 10em;
+//       margin: 0 auto;
+//       border: 0.125rem solid #ccc;
+//     }
+//     .userInfo {
+//       text-align: center;
+//       margin: 0.5rem 0 1.25rem;
+//       h1 {
+//         font-size: 3.4em;
+//         color: #333;
+//         margin-bottom: 0.5rem;
+//       }
+//       h2 {
+//         font-size: 1.4em;
+//         color: #555;
+//         margin-bottom: 0.5rem;
+//       }
+//       h3 {
+//         font-size: 1.4em;
+//         color: #333;
+//         &:before {
+//           content: 'Skills Include: ';
+//           color: #acacac;
+//         }
+//       }
+//     }
+//     .messageButton {
+//       padding: 1rem;
+//       font-size: 2.4em;
+//       text-align: center;
+//       background: orange;
+//       color: #fff;
+//       border-radius: 0.25rem;
+//       box-shadow: 0 0 2px rgba(grey, 0.5);
+//       transition: all 0.2s;
+//       &:hover {
+//         cursor: pointer;
+//         background: darken(orange, 10%);
+//       }
+//     }
+// }
+//
+// // Desktop Overriding Styles
+// @media (min-width: 768px) {
+//   .UserItem {
+//     .UserItemComponent {
+//       display: flex;
+//       align-items: center;
+//       padding: 0 1rem 0 0;
+//       width: 800px;
+//       font-size: 10px;
+//     }
+//     .userPhoto, .userInfo, .messageButton {
+//       flex: 1;
+//     }
+//     .userPhoto {
+//       max-width: 10em;
+//       height: 10em;
+//       margin: 0;
+//       border-radius: 0;
+//       border: 0;
+//     }
+//     .userInfo {
+//       text-align: left;
+//       margin: 0 1rem 0 1rem;
+//       h1 {
+//         font-size: 2.4em;
+//       }
+//     }
+//     .messageButton {
+//       padding: 1rem;
+//       font-size: 1.6em;
+//       max-width: 10rem;
+//     }
+//   }
+// }

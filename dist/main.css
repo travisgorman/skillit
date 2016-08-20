@@ -1,10 +1,8 @@
-* {
-  list-style-type: none; }
-
 .myProfile {
   display: flex;
   flex-direction: row; }
   .myProfile .photo {
+    flex: 1;
     width: 50%;
     height: 50%; }
   .myProfile .info {
@@ -17,23 +15,92 @@
     width: 50%;
     height: 50%; }
 
-.userItem {
-  display: flex;
-  flex-direction: row; }
-  .userItem .userPhoto {
-    flex: 1;
-    background: red; }
-  .userItem .userInfo {
-    flex: 1;
-    background: green; }
-  .userItem .userSkills {
-    flex: 1;
-    background: yellow; }
-  .userItem .userBio {
-    flex: 1;
-    background: blue; }
+html, body {
+  height: 100%;
+  background: #eee;
+  font-family: helvetica, arial, san-serif; }
+  html *, body * {
+    box-sizing: border-box;
+    list-style-type: none; }
 
-.navLink {
-  margin-right: 3rem; }
+.header {
+  margin: 1.5rem auto;
+  justify-content: center;
+  align-items: center; }
+  .header .navLink {
+    margin-right: 3rem;
+    text-decoration: none;
+    color: #333; }
+
+.welcomePage {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex; }
+
+form.searchForm {
+  margin: 3rem 2.5rem;
+  text-align: center; }
+  form.searchForm .searchLocation, form.searchForm .searchSkill {
+    color: #333;
+    font-size: 1rem;
+    margin-right: 1.5rem;
+    padding-left: .5rem; }
+
+.UserItem {
+  width: 800px;
+  height: 128px;
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  min-width: 18rem;
+  font-size: 10px;
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.3); }
+  .UserItem .userPhoto {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    margin: 0 auto;
+    border: 0.125rem solid #ccc; }
+  .UserItem .userInfo {
+    margin-left: 1rem;
+    align-items: center;
+    color: #444; }
+    .UserItem .userInfo flex-
+    h1 {
+      font-size: 1.75em;
+      color: #333;
+      margin-bottom: 0.5rem;
+      line-height: 1.25; }
+    .UserItem .userInfo h2 {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 0.5rem; }
+    .UserItem .userInfo h3 {
+      font-size: 1rem;
+      color: #333; }
+      .UserItem .userInfo h3:before {
+        content: 'Skills Include: ';
+        color: #787878; }
+  .UserItem .messageButton {
+    align-self: center;
+    width: 140px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: 1.5em;
+    text-align: center;
+    background: orange;
+    color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 2px rgba(128, 128, 128, 0.5);
+    transition: all 0.2s; }
+    .UserItem .messageButton:hover {
+      cursor: pointer;
+      background: #cc8400; }
 
 /*# sourceMappingURL=main.css.map */

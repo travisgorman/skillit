@@ -1,48 +1,145 @@
-* {
-  list-style-type: none;
-}
-.myProfile{
-  display: flex;
-  flex-direction: row;
-  .photo {
-    width: 50%;
-    height: 50%;
-  }
-  .info {
-    width: 50%;
-    height: 50%;
-  }
-  .skills {
-    width: 50%;
-    height: 50%;
-  }
-  .description {
-    width: 50%;
-    height: 50%;
+// @import 'userItem';
+@import 'myProfile';
+
+html, body {
+  height: 100%;
+  background: #eee;
+  font-family: helvetica, arial, san-serif;
+  * {
+    box-sizing: border-box;
+    list-style-type: none;
   }
 }
-// UserItem component
-.userItem{
-  display: flex;
-  flex-direction: row;
-  .userPhoto{
-    flex: 1;
-    background: red;
-  }
-  .userInfo{
-    flex: 1;
-    background: green;
-  }
-  .userSkills{
-    flex: 1;
-    background: yellow;
-  }
-  .userBio{
-    flex: 1;
-    background: blue;
+// #page {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.header {
+  // width: 90%;
+  margin: 1.5rem auto;
+  justify-content: center;
+  align-items: center;
+  .navLink {
+    margin-right: 3rem;
+    text-decoration: none;
+    color: #333;
   }
 }
 
-.navLink{
-  margin-right: 3rem;
+.welcomePage {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+
 }
+
+form.searchForm {
+  margin: 3rem 2.5rem;
+  text-align: center;
+  .searchLocation,.searchSkill{
+    color: #333;
+    font-size: 1rem;
+    margin-right: 1.5rem;
+    padding-left: .5rem;
+  }
+}
+
+.page {
+  // height: 100%;
+  // width: 100%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+// user item start
+.UserItem {
+  width: 800px;
+  height: 128px;
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  min-width: 18rem;
+  font-size: 10px;
+  box-shadow: 0 0 0.25rem rgba( black, 0.3 );
+  .userPhoto {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    // width: 10em;
+    // height: 10em;
+    margin: 0 auto;
+    border: 0.125rem solid #ccc;
+  }
+  .userInfo {
+    // display: flex;
+    // flex-direction: column;
+    // flex-grow: .75;
+    margin-left: 1rem;
+    align-items: center;
+    color: #444;
+    flex-
+    h1 {
+      font-size: 1.75em;
+      color: #333;
+      margin-bottom: 0.5rem;
+      line-height: 1.25;
+    }
+    h2 {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+    h3 {
+      font-size: 1rem;
+      color: #333;
+      &:before {
+        content: 'Skills Include: ';
+        color: #787878;
+      }
+    }
+  }
+  .messageButton {
+    align-self: center;
+    width: 140px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: 1.5em;
+    text-align: center;
+    background: orange;
+    color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 2px rgba(128, 128, 128, 0.5);
+    transition: all 0.2s;
+    &:hover {
+      cursor: pointer;
+      background: darken(orange, 10%);
+    }
+  }
+}
+
+// .userPhoto{
+//   width: 80px
+// }
+// .loginForm{
+//   height: 100%;
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+// .searchResultsComponent{
+//   display:flex;
+//   flex-direction: column;
+// }
+// .searchForm{
+//   margin-top: 3rem;
+// }
