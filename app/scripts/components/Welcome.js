@@ -6,8 +6,9 @@ import users from '../yoosers';
 import _ from 'underscore';
 import UserItem from './UserItem';
 
-export default React.createClass({
-  getInitialState: function () {
+
+export default React.createClass({  
+    getInitialState: function () {
     return {
         users: [
           {
@@ -202,97 +203,28 @@ export default React.createClass({
       ]
      }
   },
-//   submitHandler: function (e) {
-//     e.preventDefault();
-//     let searchLocation = this.refs.location.value;
-//     let searchSkill = this.refs.skill.value;
-//     let searchSkillAndLocation = users.filter( (user) => {
-//       return user.location === searchLocation
-//         && _.contains( user.skills, searchSkill )
-//     }); // returns an array containing all matching users (the whole user object)
-//
-//
-//     let matchingUsers = searchSkillAndLocation
-//       .map( user => {
-//         return user.username
-//     }); // returns an array containing the names of all matching users
-//
-//     let userMatchInfo;
-//     if (matchingUsers.length === 1){
-//     userMatchInfo = `There is ${matchingUsers.length} user in ${searchLocation} who can help you with ${searchSkill}.`} else { userMatchInfo = `There are ${matchingUsers.length} users in ${searchLocation} who can help you with ${searchSkill}.`
-//     }
-//   console.log( userMatchInfo, searchSkillAndLocation );
-//     //  how many, of what and where?
-//   console.log( matchingUsers );
-//     //  logs an array of the names of all returned users
-// },
+  submitHandler: function (e) {
+    e.preventDefault();
+    let searchLocation = this.refs.location.value;
+    let searchSkill = this.refs.skill.value;
+},
+  render: function(){  
+  let mySearchResults = this.state.users.map( user => {
+    
+    return (
+      <UserItem 
+        userphoto={this.props.userphoto}
+        username={this.props.userphoto}
+        location={this.props.location}
+        skills={this.props.skills}
+      />
+    )
 
-render: function () {
-
-  // console.log(this.state.users);
-
-    let mySearchResults2 = this.state.users
-      .forEach( user => {
-        let userSkills = '';
-        return user.skills
-           .forEach( skill => {
-              userSkills += skill + `, `;
-              return userSkills;
-            })
-        });
-            //   if ( !i === user.skills.length -1 ) {
-            //   userSkills += `${skill}, `
-            // } else {
-            //   userSkills += `${skill}, etc...`
-            // }
-
-console.log(mySearchResults2);
-    // console.log(user.skills);
-
-  return (
-            <div
-            className="welcomePage"
-            >
-                <Header/>
-                <form
-                  className="searchForm"
-                  onSubmit={this.submitHandler} >
-                  <input
-                    type="text"
-                    ref="location"
-                    className="searchLocation"
-                    placeholder="location" />
-                  <input
-                    type="text"
-                    ref="skill"
-                    className="searchSkill"
-                    placeholder="skill" />
-                  <input
-                    type="submit"
-                    value="search"
-                    id="searchButton" />
-                </form>
-
-                <main
-                  className="page" >
-                  {/* {mySearchResults} */}
-                </main>
-              </div>
-           )
-       }
-   });
-  // let mySearchResults = this.state.users.map( (user, i) => {
-  //
-  //   console.log( user.skills[0], user.skills[1], user.skills[2] );
-  //   return (
-  //
-  //     <UserItem
-  //       key={i}
-  //       userphoto={user.userphoto}
-  //       username={user.username}
-  //       location={user.location}
-  //       skills={ user.skills[0] }
-  //     />
-  //
-  //   )
-  // });
+  })
+    return (
+      <div className="SearchResults">
+        {mySearchResults}
+      </div>
+    )
+  }
+});
