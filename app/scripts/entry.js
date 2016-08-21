@@ -1,7 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import ReactDOM from 'react-dom';
-
+import users from './yoosers';
 import router from './router';
 import store from './store';
 import  settings from './settings';

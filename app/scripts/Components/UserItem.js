@@ -1,12 +1,9 @@
 import React from 'react';
 
 export default React.createClass({
-  getInitialState: function () {
-    return {}
-  },
+
   render: function() {
-    // console.log(this.state.users);
-    
+
     return (
       <div className="UserItem">
           <img className="userPhoto" src={this.props.userphoto} />
@@ -21,3 +18,35 @@ export default React.createClass({
     )
   }
 });
+//
+
+//
+// export default React.createClass({
+//   render (){
+//     <div className="searchContainer">
+//       <header className="header">
+//         <h1 className="brand">Swap</h1>
+//         <input className='searchInput'
+//         type="text"
+//         placeholder='Search'/>
+//       </header>
+//       <div className="results">
+//
+//       {let results = search.users.map( (user, i) => {
+//
+//         <UserItem
+//           key={i}
+//           username={this.props.username}
+//           userphoto={this.props.userphoto}
+//           location={this.props.location}
+//           description={this.props.description}
+//         />
+//
+//       })}
+//
+//       {results}
+//
+//       </div>
+//     </div>
+//   }
+// });
