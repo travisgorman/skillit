@@ -1,23 +1,24 @@
 import React from 'react';
 
 export default React.createClass({
-
   render: function() {
-
     return (
-      <div className="UserItem">
-          <img className="userPhoto" src={this.props.userphoto} />
-          <div className="userInfo">
+      <div className="UserItemView">
+        <div className="User_Item">
+          <img className="avatar" src={this.props.userphoto} />
+          <div className="user_info">
             <h1> {this.props.username} </h1>
             <h2> {this.props.location} </h2>
           </div>
-          <div className="messageButton">
+          <div className="message_button">
             Message
           </div>
+        </div>
       </div>
     )
   }
 });
+
 //
 
 //

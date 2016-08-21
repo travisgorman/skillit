@@ -1,31 +1,13 @@
-html, body {
-  height: 100%;
-  background: #eee;
-  font-family: helvetica, arial, san-serif;
-  * {
-    box-sizing: border-box;
-  }
-}
-p {
-  font-size: 10px;
-  line-height: 1.6;
-  color: #333;
-}
-h4 {
-  font-size: 8px;
-  color: #333;
-}
 // Default, Mobile First Styles
-.page {
-  background: oldlace;
+.UserItemView {
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  .component {
-    margin: 0 1rem;
+  .User_Item {
+    margin: 2.5rem 1rem;
     padding: 1rem;
     background: #1C272D;
     box-shadow: 0 0 0.25rem rgba( black, 0.3 );
@@ -35,27 +17,21 @@ h4 {
     font-size: 10px;
    }
   .avatar {
-    // background-color: darken(white, 10%);
-    background-image: url('http://i.imgur.com/vrpc8w5.png');
-    background-size: cover;
     border-radius: 100%;
     width: 128px;
     height: 128px;
     margin: 1.5rem auto;
-    border: 0.125rem solid #ccc;
   }
   .user_info {
     text-align: center;
     padding: 1.5rem;
     line-height: 1.5;
-    background-color: slategray;
     border-radius: 0.25rem;
     h1 {
       margin: 0;
       padding: 0;
       font-size: 1.25rem;
       color: #333;
-      margin-bottom: 0.5rem;
     }
     h2 {
       margin: 0;
@@ -70,7 +46,7 @@ h4 {
       color: #333;
     }
   }
-  .btn {
+  .message_button {
     margin: .7rem;
     padding: .7rem;
     font-size: 2.4em;
@@ -82,22 +58,23 @@ h4 {
     transition: all 0.2s;
     &:hover {
       cursor: pointer;
-      background: #8b475d;
+      background: darken(orange, 10%);
     }
   }
 }
 
 // Desktop Overriding Styles
 @media (min-width: 768px) {
-  .page {
-    .component {
+  .UserItemView {
+    .User_Item {
       display: flex;
       align-items: center;
-      width: 800px;
+      width: 900px;
       height: 256px;
       font-size: 10px;
+      padding: 0;
     }
-    .avatar, .user_info, .btn {
+    .avatar, .user_info, .message_button {
       flex: 1;
     }
     .avatar {
@@ -116,7 +93,7 @@ h4 {
         font-size: 2.4em;
       }
     }
-    .btn {
+    .message_button {
       padding: 1rem;
       font-size: 1.6em;
       max-width: 10rem;

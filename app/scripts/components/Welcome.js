@@ -3,7 +3,7 @@ import Header from './Header';
 import UserItem from './UserItem';
 import SearchForm from './SearchForm'
 import Search from './Search';
-
+import SearchResult from './SearchResult';
 
 export default React.createClass({
   render: function () {
@@ -11,7 +11,7 @@ export default React.createClass({
             <div className="welcomePage">
                <Header/>
                <Search/>
-               <UserItem/>
+               <SearchResult/>
             </div>
            )
   }
