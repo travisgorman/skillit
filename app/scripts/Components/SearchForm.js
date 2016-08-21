@@ -4,25 +4,27 @@ import _ from 'underscore';
 
 export default React.createClass({
   getInitialState: function () {
-    return {  }
+    return {users: users}
   },
   submitHandler: function (e) {
     e.preventDefault();
+    
     let searchLocation = this.refs.location.value;
     let searchSkill = this.refs.skill.value;
 
-    let searchSkillAndLocation = users.filter( user => {
-      return user.location === searchLocation
-        && _.contains( user.skills, searchSkill )
-    });
-    //and array of matching user objects
-    console.log(searchSkillAndLocation);
-    //set to this.state.myUsers
-    this.setState({myUsers: searchSkillAndLocation})
-    console.log(this.state.myUsers);
+    let search = users.filter( user => {
+        return user.location === searchLocation
+          && _.contains( user.skills, searchSkill )
+      });
+    // setTimeout(  ()=> {
+    //   this.setState({match: search});
+    //   console.log(this.state.match);
+    // },2000);
   },
   render: function() {
+
     return (
+          <div className="Search">
             <form
                 className="searchForm"
                 onSubmit={this.submitHandler} >
@@ -41,6 +43,10 @@ export default React.createClass({
                 value="search"
                 id="searchButton" />
             </form>
+            <div className="results">
+
+            </div>
+          </div>
     )
   }
 });
