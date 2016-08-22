@@ -22,10 +22,9 @@ export default React.createClass({
         a[ b ] = this.refs[ b ].value;
         return a;
       }, {});
-      data.userphoto = 'http://i.imgur.com/c6PPaWT.png';
+      data.userphoto = 'http://i.imgur.com/47RBp85.png';
       store.sessionModel.signup( data );
 
-      console.log( store.sessionModel );
   },
   shouldComponentUpdate: function ( nextProps, nextState ) {
     if ( nextState.authtoken ){

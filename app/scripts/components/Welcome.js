@@ -11,7 +11,6 @@ export default React.createClass({
             <div className="welcomePage">
                <Header/>
                <Search/>
-               <SearchResult/>
             </div>
            )
   }
