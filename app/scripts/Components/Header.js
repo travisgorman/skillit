@@ -16,5 +16,5 @@ export default React.createClass({
   }
 });
 
-// <Link to='/Welcome' className='navLink'>profile</Link>
+// <Link to='/App' className='navLink'>profile</Link>
 // <Link to='/EditMyProfile' className='navLink'>inbox</Link>

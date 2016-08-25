@@ -1,125 +1,42 @@
-html, body {
-  height: 100%;
-  background: #eee;
-  font-family: helvetica, arial, san-serif;
-  * {
-    box-sizing: border-box;
-  }
-}
-p {
-  font-size: 10px;
-  line-height: 1.6;
-  color: #333;
-}
-h4 {
-  font-size: 8px;
-  color: #333;
-}
-// Default, Mobile First Styles
-.page {
-  background: oldlace;
+.UserItemView {
   height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  .component {
-    margin: 0 1rem;
-    padding: 1rem;
-    background: #1C272D;
-    box-shadow: 0 0 0.25rem rgba( black, 0.3 );
-    border-radius: 0.25rem;
+  .User_Item {
     width: 500px;
     min-width: 18rem;
-    font-size: 10px;
-   }
-  .avatar {
-    // background-color: darken(white, 10%);
-    background-image: url('http://i.imgur.com/vrpc8w5.png');
-    background-size: cover;
-    border-radius: 100%;
-    width: 128px;
-    height: 128px;
-    margin: 1.5rem auto;
-    border: 0.125rem solid #ccc;
-  }
-  .user_info {
-    text-align: center;
-    padding: 1.5rem;
-    line-height: 1.5;
-    background-color: slategray;
+    margin: 2.5rem 1rem;
+    background: #1C272D;
+    padding: 1rem;
     border-radius: 0.25rem;
-    h1 {
-      margin: 0;
-      padding: 0;
-      font-size: 1.25rem;
-      color: #333;
-      margin-bottom: 0.5rem;
-    }
-    h2 {
-      margin: 0;
-      padding: 0;
-      font-weight: light;
-      font-size: 1rem;
-      color: #333;
-    }
-    h4 {
-      line-height: 2.5;
-      font-size: .5rem;
-      color: #333;
-    }
-  }
-  .btn {
-    margin: .7rem;
-    padding: .7rem;
-    font-size: 2.4em;
-    text-align: center;
-    background: palevioletred;
-    color: #fff;
-    border-radius: 0.25rem;
-    box-shadow: 0 0 2px rgba(grey, 0.5);
-    transition: all 0.2s;
-    &:hover {
-      cursor: pointer;
-      background: #8b475d;
-    }
-  }
-}
-
-// Desktop Overriding Styles
-@media (min-width: 768px) {
-  .page {
-    .component {
-      display: flex;
-      align-items: center;
-      width: 800px;
-      height: 256px;
-      font-size: 10px;
-    }
-    .avatar, .user_info, .btn {
-      flex: 1;
-    }
+    box-shadow: 0 0 0.25rem rgba( black, 0.3 );
     .avatar {
-      max-width: 50%;
-      background-position: 50% 45%;
-      height: 100%;
-      margin: 0;
-      border-radius: 0;
-      border: 0;
+      border-radius: 100%;
+      width: 8rem;
+      height: 8rem;
+      margin: auto;
     }
-    .user_info {
+    .user_info{
+      margin: 0;
       text-align: center;
-      height: 100%;
-      border-radius: 0;
-      h1 {
-        font-size: 2.4em;
+      line-height:1.5;
+      border-radius: 0.25;
+      color: #fff;
+      h1{
+        font-size:1.25rem;
+      }
+      h2{
+        font-size:1.1rem;
+      }
+      h3{
+        font-size:0.8rem;
       }
     }
-    .btn {
-      padding: 1rem;
-      font-size: 1.6em;
-      max-width: 10rem;
+    .message_button{
+
     }
   }
 }

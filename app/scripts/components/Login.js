@@ -29,7 +29,7 @@ export default React.createClass({
   },
   shouldComponentUpdate: function (nextProps, nextState) {
     if (nextState.authtoken) {
-      hashHistory.push('/welcome');
+      hashHistory.push('/app');
       return false;
     } else {
       return true;
@@ -37,7 +37,8 @@ export default React.createClass({
   },
   render: function () {
     return (
-      <form onSubmit={this.submitHandler}>
+
+     <form onSubmit={this.submitHandler}>
       <input
         ref="username"
         type="text"
@@ -51,6 +52,7 @@ export default React.createClass({
         value="submit" />
       <Link to="/signup"><span> create an account </span></Link>
       </form>
+
     )
   }
 });

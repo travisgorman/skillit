@@ -6,12 +6,14 @@ import router from './router';
 import store from './store';
 import  settings from './settings';
 
+
 $(document).ajaxSend(function(evt, xhr, jquerySettings){
-  if (store.sessionModel.get('authtoken')) {
-    xhr.setRequestHeader( 'Authorization', 'Kinvey ' + store.sessionModel.get('authtoken') );
+  if ( localStorage.getItem( 'authtoken' )) {
+    xhr.setRequestHeader( 'Authorization', 'Kinvey ' + localStorage.getItem('authtoken') );
   } else {
     xhr.setRequestHeader('Authorization', settings.basicAuth)
   }
 });
+
 
 ReactDOM.render(router, document.getElementById('page'));

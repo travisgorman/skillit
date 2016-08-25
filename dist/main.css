@@ -10,36 +10,30 @@
     margin: 2.5rem 1rem;
     padding: 1rem;
     background: #1C272D;
-    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.3);
     border-radius: 0.25rem;
     width: 500px;
     min-width: 18rem;
-    font-size: 10px; }
+    font-size: 10px;
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.3); }
   .UserItemView .avatar {
     border-radius: 100%;
-    width: 128px;
-    height: 128px;
+    width: 8rem;
+    height: 8rem;
     margin: 1.5rem auto; }
   .UserItemView .user_info {
+    margin: 0;
     text-align: center;
-    padding: 1.5rem;
     line-height: 1.5;
-    border-radius: 0.25rem; }
+    border-radius: 0.25rem;
+    color: #fff; }
     .UserItemView .user_info h1 {
-      margin: 0;
-      padding: 0;
-      font-size: 1.25rem;
-      color: #333; }
+      font-size: 1.25rem; }
     .UserItemView .user_info h2 {
-      margin: 0;
-      padding: 0;
       font-weight: light;
-      font-size: 1rem;
-      color: #333; }
+      font-size: 1rem; }
     .UserItemView .user_info h4 {
       line-height: 2.5;
-      font-size: .5rem;
-      color: #333; }
+      font-size: .5rem; }
   .UserItemView .message_button {
     margin: .7rem;
     padding: .7rem;
@@ -58,18 +52,16 @@
   .UserItemView .User_Item {
     display: flex;
     align-items: center;
-    width: 900px;
-    height: 256px;
-    font-size: 10px;
+    width: 50rem;
+    height: 16rem;
     padding: 0; }
   .UserItemView .avatar, .UserItemView .user_info, .UserItemView .message_button {
     flex: 1; }
   .UserItemView .avatar {
     max-width: 50%;
-    background-position: 50% 45%;
     height: 100%;
     margin: 0;
-    border-radius: 0;
+    border-radius: 100%;
     border: 0; }
   .UserItemView .user_info {
     text-align: center;
@@ -153,17 +145,20 @@
 
 /* '' */
 header {
-  height: 88px;
+  height: 4.5rem;
   background-color: #54C4BB; }
   header .logo {
     font-size: 4rem;
     display: inline-block;
-    margin-left: 2.5rem; }
+    margin-left: 2.5rem;
+    color: #304047; }
   header nav {
     font-size: 1.5rem;
     color: #1C272D;
     float: right;
     margin-top: 2rem; }
+  header .searchForm {
+    padding: .5rem; }
   header .icon-mail {
     margin-right: 1.3rem;
     font-size: 1.5rem; }
@@ -175,10 +170,33 @@ header {
   header .icon-user-2:before {
     content: '\e804'; }
 
+.Search {
+  min-height: 100vh; }
+
+.searchForm {
+  padding: 1em 2em;
+  margin: auto;
+  background: #263238;
+  text-align: center; }
+  .searchForm input {
+    margin: 1rem; }
+
+.searchLocation {
+  font-size: 1.25rem; }
+
+.searchSkill {
+  font-size: 1.25rem; }
+
+.searchButton {
+  width: 128px;
+  border-radius: 0.25rem;
+  font-size: 1.5rem; }
+
 html, body {
   height: 100%;
   background: #eee;
-  font-family: helvetica, arial, sans-serif; }
+  font-family: helvetica, arial, sans-serif;
+  font-size: 16px; }
   html *, body * {
     box-sizing: border-box;
     list-style-type: none;

@@ -28,7 +28,7 @@ export default React.createClass({
   },
   shouldComponentUpdate: function ( nextProps, nextState ) {
     if ( nextState.authtoken ){
-      hashHistory.push( '/welcome' );
+      hashHistory.push( '/app' );
       return false;
     } else {
       return true;

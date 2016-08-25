@@ -79,3 +79,24 @@ The reason this doesn't already exist is probably because it's way more niche th
 The basic functionality: a user has a profile, detailing particular skills they may have. They could then search for something they have interest in learning, and other users would be offered for them to initiate contact with. Pretty simple concept, but there are tons of additional features that can be added.
 
 On couchsurfing, the commonality everyone shares is traveling. Here, the one thing that unites everyone is that users value self-education, self-improvement, and taking an active role in learning new things. Users see learning a new skill as an important investment they can make in themselves. Everyone gets the benefit of learning and teaching.
+
+
+___
+
+
+```scss
+
+  html, body, .container {
+    width: 100%;
+    height: 100%;
+  }
+  .container{
+    display: flex;
+  }
+  .box {
+    margin: auto;
+  }
+
+```
+
+

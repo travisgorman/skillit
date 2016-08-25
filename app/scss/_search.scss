@@ -1,0 +1,24 @@
+.Search {
+  min-height: 100vh;
+}
+.searchForm {
+  input {
+    margin: 1rem;
+  }
+  padding: 1em 2em;
+  margin: auto;
+  background: #263238;
+  text-align: center;
+}
+  .searchLocation {
+    font-size: 1.25rem;
+  }
+  .searchSkill {
+    font-size: 1.25rem;
+  }
+  .searchButton {
+    width: 128px;
+    border-radius: 0.25rem;
+    font-size: 1.5rem;
+  }
+  

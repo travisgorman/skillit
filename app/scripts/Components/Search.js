@@ -1,37 +1,59 @@
 import React from 'react';
-import SearchInput, {createFilter} from 'react-search-input';
-import users from '../yoosers';
+// import users from '../yoosers';
 import Header from './Header';
 import UserItem from './UserItem';
 import _ from 'underscore';
+import store from '../store';
+import userCollection from '../Collections/UserCollection';
 
 export default React.createClass({
   getInitialState () {
-      return { users: [] }
+      return { users: store.userCollection.toJSON() }
+      console.log(this.state.users);
   },
-    submitHandler: function (e) {
-      e.preventDefault();
-      let searchLocation = this.refs.location.value;
-      let searchSkill = this.refs.skill.value;
-    // get users that match - return in an ob
-      let search = users.filter( user => {
-        return ( user.location === searchLocation
-        && _.contains(user.skills, searchSkill))
+  componentDidMount: function () {
+    store.userCollection.on( 'update change', this.updateState)
+  },
+  updateState: function () {
+    this.setState({
+      users: store.userCollection.toJSON()
     });
-      console.log( '`search`..', search );
-      console.log(this.state);
-      //
-      setTimeout( () => {
-        this.setState( {users: search} )
-        console.log( 'here is your state, sir', this.state);
-        console.log( 'these are your users, sir', this.state.users  );
-      },1000);
-      //
   },
+  componendWillUnmount: function () {
+    store.userCollection.off('update change', this.updateState)
+  },
+  submitHandler: function (e) {
+    e.preventDefault();
+    console.log( e );
+
+    let searchLocation = this.refs.location.value;
+    let searchSkill = this.refs.skills.value;
+
+    store.userCollection.searchLocationAndSkill( searchLocation, searchSkill );
+
+    // let searchResults = this.state.users;
+    // store.userCollection.fetch({
+    //   url: `https://baas.kinvey.com/user/kid_H1NgpLJ9`,
+    //   success: function( response ){
+    //     console.log( response );
+    //   }
+    // });
+
+
+  //   let searchResults = this.state.users.filter( user => {
+  //     return ( user.location === searchLocation
+  //     && _.contains(userskills, searchSkill))
+  // });
+    // //
+    // setTimeout( () => {
+    //   this.setState( {users: searchResults} )
+    //   console.log( 'here is your state, sir', this.state);
+    //   console.log( 'these are your users, sir', this.state.users  );
+    // }, 1000);
+    //
+},
     render() {
       let self = this.state;
-      console.log(this.state.users);
-      console.log( self.users );
       let mySearchResults = this.state.users
         .map( (result, i) => {
           return (
@@ -44,24 +66,25 @@ export default React.createClass({
           )
         });
         return (
-          <div className="Search">
+          <div className="search">
               <form
                 className="searchForm"
                 onSubmit={this.submitHandler} >
                 <input
                   type="text"
-                  ref="location"
-                  className="searchLocation"
-                  placeholder="location" />
+                  ref="skills"
+                  className="searchThing"
+                  placeholder="where?" />
                 <input
+
                   type="text"
-                  ref="skill"
-                  className="searchSkill"
-                  placeholder="skill" />
+                  ref="location"
+                  className="where?"
+                  placeholder="searchPlace" />
                 <input
                   type="submit"
                   value="search"
-                  id="searchButton" />
+                  className="searchButton" />
                 </form>
                 <div className="SearchResults">
                   {mySearchResults}
